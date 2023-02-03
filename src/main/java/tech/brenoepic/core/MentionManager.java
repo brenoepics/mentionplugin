@@ -69,11 +69,8 @@ public class MentionManager {
 
             MentionPlugin.getManager().addMessage(new Message(sender.getHabboInfo().getId(), String.join(" ", mentioned), message));
         }
-        if (total > 0) {
-            sender.whisper(Emulator.getTexts().getValue(total == 1 ? "commands.cmd_mention.message.sent" : "commands.cmd_mention.message.multi.sent").replace("%var%", String.valueOf(total)));
-        } else {
-            sender.whisper(error);
-        }
+    
+sender.whisper(total > 0 ? Emulator.getTexts().getValue(total == 1 ? "commands.cmd_mention.message.sent" : "commands.cmd_mention.message.multi.sent").replace("%var%", String.valueOf(total)) : error);
 
         return delete;
     }
