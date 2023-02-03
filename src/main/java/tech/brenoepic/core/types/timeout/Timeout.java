@@ -1,4 +1,4 @@
-package com.brenoepic.timeout;
+package tech.brenoepic.core.types.timeout;
 
 import java.time.Instant;
 
