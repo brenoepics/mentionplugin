@@ -25,9 +25,7 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
-    - name: Install manual libraries
-      run: |
-          mvn install:install-file -Dfile=Dependencies/Habbo-3.0.0.jar -DgroupId=com.eu.habbo -DartifactId=Habbo -Dversion=3.0.0 -Dpackaging=jar
+  
     - name: Build Plugins
       run: mvn clean -B package --file pom.xml
     - run: mkdir staging && cp target/*-jar-with-dependencies.jar staging
