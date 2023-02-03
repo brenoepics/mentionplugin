@@ -1,73 +1,8 @@
-# MentionPlugin
+<h1>Mention Plugin for Arcturus Morningstar 3.5.x</h1><p>A simple and easy-to-use plugin for mentioning users in a chat room. You can mention users using their username, all friends with @friends, everyone with @everyone, everyone awake with @here or the entire room with @room. The @ symbol can be placed anywhere in the message. The plugin also includes features such as blocking mentions, setting a mention timeout, choosing between bubble alert or whisper, and logging with a database or Discord.</p><h2>How to use</h2><p>To use the plugin, simply type <code>@username</code>, <code>@friends</code>, <code>@everyone</code>, or <code>@room</code> followed by your message.</p><h2>How to install</h2><ol><li>Download a pre-compiled version of the plugin from <a href="https://github.com/brenoepics/MentionPlugin/releases/" target="_new">here</a>.</li><li>Run the SQL script provided.</li><li>Move the <code>MentionPlugin-2.2-jar-with-dependencies.jar</code> file to your emulator's plugins folder and restart the emulator.</li><li>Set up user permissions by modifying the <code>acc_mention</code>, <code>acc_mention_everyone</code>, <code>acc_mention_friends</code>, and <code>acc_mention_room</code> fields in your database's permissions table.</li><li>Update the permissions by typing <code>:update_permissions</code> in the hotel or restarting the emulator.</li><li>Start mentioning users by using the mentioned keywords.</li></ol><h2>Configuration</h2><p>The plugin includes the following configuration options:</p><h4>Emulator Settings:</h4><table><thead><tr><th>Key</th><th>Default Value</th></tr></thead><tbody><tr><td><code>commands.cmd_mention_friends.prefix</code></td><td><code>friends</code></td></tr><tr><td><code>commands.cmd_mention.message_error.delete</code></td><td><code>true</code></td></tr><tr><td><code>commands.cmd_mention.message_success.delete</code></td><td><code>false</code></td></tr><tr><td><code>commands.cmd_mention.follow.enabled</code></td><td><code>true</code></td></tr><tr><td><code>commands.cmd_mention.message.show_username.enabled</code></td><td><code>true</code></td></tr><tr><td><code>commands.cmd_mention_everyone.follow.enabled</code></td><td><code>true</code></td></tr><tr><td><code>commands.cmd_mention_regex</code></td><td><code>@(\\w+)</code></td></tr><tr><td><code>commands.cmd_mention_max</code></td><td><code>5</code> (max users in same message)</td></tr><tr><td><code>mentionplugin.sanitize</code></td><td><code>true</code></td></tr><tr><td><code>mentionplugin.mode_user</code></td><td><code>1</code> (1 for bubble, 2 for whisper)</td></tr><tr><td><code>mentionplugin.mode_everyone</code></td><td><code>1</code> (1 for bubble, 2 for whisper)</td></tr><tr><td><code>mentionplugin.mode_friends</code></td><td><code>1</code> (1 for bubble, 2 for whisper)</td></tr><tr><td><code>mentionplugin.timeout_user</code></td><td><code>10</code></td></tr><tr><td><code>mentionplugin.timeout_everyone</code></td><td><code>5</code></td></tr><tr><td><code>mentionplugin.timeout_friends</code></td><td><code>60</code></td></tr><tr><td><code>mentionplugin.timeout_room</code></td><td><code>20</code></td></tr><tr><td><code>mentionplugin.logging_database</code></td><td><code>true</code></td></tr><tr><td><code>mentionplugin.database.log_timeout_minutes</code></td><td><code>30</code></td></tr></tbody></table><p>Permissions:</p><table><thead><tr><th>Key</th><th>Default Value</th></tr></thead><tbody><tr><td>acc_mention</td><td>1</td></tr><tr><td>acc_mention_friends</td><td>1</td></tr><tr><td>acc_mention_everyone</td><td>0</td></tr><tr><td>acc_mention_room</td><td>2</td></tr><tr><td>cmd_blockmention</td><td>1</td></tr></tbody></table><p>These permissions can be adjusted in the permissions table in your database. To do so, open your database and go to the permissions table and change the values of the mentioned keys as per your requirements.</p><p>Note: To take the changes into effect, you will have to type <code>:update_permissions</code> in your hotel or restart the emulator.</p>
+BrenoEpic#9671 for any questions or concerns
 
-Working with Arcturus Morningstar 3.0.0
+## Why am I disconnected when I get a mention in flash client?
+Flash Client Error
 
-if you want a more simple version, here is the link: https://git.krews.org/brenoepic/mentionplugin
+Your image link is not a valid .png or .gif, and flash client disconnects when receiving the bubble alert. To resolve this issue, change the key commands.cmd_mention_everyone.look in the emulator_texts to a valid .png or .gif.
 
-if you want a pre-compiled version, here is the link: https://github.com/brenoepics/MentionPlugin/releases/
-## How to use?
-you just need to send:
-```@username``` , ```@friends``` , ```@everyone``` or ```@room```
-with a message.
-- Mention with @username at the beginning of the message [x] 
-- Mention in anywhere in the message [x]
-- Mention all friends with @friends [x] 
-- Mention everyone with @everyone [x] 
-- Mention whole room with @room [x]
-- BlockMention Command [x]
-- Set Mention Timeout [x]
-- Choose between BubbleAlert or whisper [x]
-- Database logging [x]
-- Discord logging [x]
-<b>with this mention plugin, you can mention anyone without putting the @ at the beginning of the message, the @ can be anywhere</b>
-
-## How can i install it?
-
- 1. Download a pre-compiled version. [MentionPlugin](https://github.com/brenoepics/MentionPlugin/releases/)
- 2. Run the sql.
- 3. Paste the MentionPlugin-2.2-jar-with-dependencies.jar file into your emulator's plugins folder and start/restart the emulator.
- 4. Now you need to give permission for your users to use @mention, to do it open your database in the permissions table, and change the acc_mention, acc_mention_everyone, acc_mention_friends, acc_mention_room.
- 5. Then, enter your hotel and type: :update_permissions or restart the emulator.
- 6. Now just mention a friend or maybe everyone :)
-
-
-## configuration
-
- Emulator_settings:
-
-| Key | Default Value             |
-| ------ |---------------------------|
-| commands.cmd_mention_friends.prefix | friends                   |
-| commands.cmd_mention.message_error.delete | true                      |
-| commands.cmd_mention.message_success.delete | false                     |
-| commands.cmd_mention.follow.enabled | true                      |
-| commands.cmd_mention.message.show_username.enabled | true                      |
-| commands.cmd_mention_everyone.follow.enabled | true                      |
-| commands.cmd_mention_regex | @(\\w+)                   |
-| commands.cmd_mention_max | 5 (max users in same msg) |
-| mentionplugin.sanitize | true                      |
-| mentionplugin.mode_user | 1 (1 bubble 2 whisper)    |
-| mentionplugin.mode_everyone | 1 (1 bubble 2 whisper)    |
-| mentionplugin.mode_friends | 1 (1 bubble 2 whisper)    |
-| mentionplugin.timeout_user | 10                        |
-| mentionplugin.timeout_everyone | 5                         |
-| mentionplugin.timeout_friends | 60                        | 
-| mentionplugin.timeout_room | 20                        | 
-| mentionplugin.logging_database | true                      |
-| mentionplugin.database.log_timeout_minutes | 30                        |
-
- Permissions:
-
-| Key                  | Default Value |
-|----------------------|---------------|
-| acc_mention          | 1             |
-| acc_mention_friends  | 1             |
-| acc_mention_everyone | 0             |
-| acc_mention_room     | 2             |
-| cmd_blockmention     | 1             |
-
-       
-My Discord: BrenoEpic#9671
-
-## why am i disconnected when i get a mention in flash client?
-Your imager's link is not a valid .png or .gif and flash client disconnects when receiving the bubble alert, change the key `commands.cmd_mention_everyone.look` in the emulator_texts to a valid .png or .gif
