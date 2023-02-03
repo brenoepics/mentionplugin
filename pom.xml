@@ -54,9 +54,9 @@
     </repositories>
     <dependencies>
         <dependency>
-			<groupId>com.eu.habbo</groupId>
-			<artifactId>Habbo</artifactId>
-			<version>3.5.0</version>
+            <groupId>com.github.brenoepics</groupId>
+			<artifactId>morningstar</artifactId>
+            <version>3-5-0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
