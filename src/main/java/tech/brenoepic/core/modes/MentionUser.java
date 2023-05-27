@@ -135,9 +135,11 @@ public class MentionUser implements IMention {
         THashMap<String, String> alert = BubbleAlert(sender, message, Emulator.getConfig().getValue("commands.cmd_mention_everyone.look")
                 .replace("%look%", sender.getHabboInfo().getLook()), Emulator.getConfig().getBoolean("commands.cmd_mention_everyone.follow.enabled", true));
 
-        if (Variables.MENTION_MODE == 1) {
+        if (Variables.MENTION_MODE == 1 || Variables.MENTION_MODE == 3) {
             habbo.getClient().sendResponse(new BubbleAlertComposer("mention", alert));
-        } else if (Variables.MENTION_MODE == 2 && habbo.getHabboInfo().getCurrentRoom() != null) {
+        }
+        
+        if ((Variables.MENTION_MODE == 2 || Variables.MENTION_MODE == 3) && habbo.getHabboInfo().getCurrentRoom() != null) {
             habbo.whisper(alert.get("message"), RoomChatMessageBubbles.ALERT);
         }
 
