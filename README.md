@@ -19,8 +19,7 @@ followed by your message.
 
 ## How to install
 
-- Download a pre-compiled version of the plugin
-  from <a href="https://github.com/brenoepics/MentionPlugin/releases/" target="_new">here</a>.
+- Download a pre-compiled version of the plugin [here](https://github.com/brenoepics/MentionPlugin/releases/).
 - Run the SQL script provided.
 - Move the `MentionPlugin-3.0-jar-with-dependencies.jar` file to your emulator's plugins folder and restart the
   emulator.
