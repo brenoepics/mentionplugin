@@ -1,5 +1,5 @@
 {
-  "main" : "tech.brenoepic.MentionPlugin",
-  "name" : "MentionPlugin 3.0",
-  "author" : "BrenoEpic#9671"
+  "main": "io.github.brenoepics.MentionPlugin",
+  "name": "MentionPlugin 4.0",
+  "author": "<a href=\"https://breno.tech\" target=\"_blank\" style=\"\ncolor: #0027ff\n\">Brenoepic</a>"
 }
